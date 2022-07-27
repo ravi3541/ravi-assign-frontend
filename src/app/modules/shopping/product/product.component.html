@@ -1,0 +1,36 @@
+<div class=" d-flex justify-content-around align-items-center py-3 border-bottom">
+    
+        <div class = "about-header border-bottom border-primary border-2">About Product</div>
+    
+
+    <div class="buy-options ">
+        <div class="row d-flex align-items-center">
+            <div class="col-5">Price $299.00</div>
+            <div class="col-4 qty-rectangle bg-light rounded">
+                <div class="row text-center">
+                    <div class="col-6 py-1 border-end">2</div>
+                    <div class="col-6 py-1">
+                        <div class="row qty-button"><i class="fa-solid fa-chevron-up"></i></div>
+                        <div class="row qty-button"><i class="fa-solid fa-chevron-down"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <button class=" btn btn-primary px-4 h5 rounded-pill">Buy Now</button>
+            </div>
+
+        </div>  
+    </div>
+</div>
+
+
+<div class="py-4">
+    <form action="http://127.0.0.1:8000/api/checkout" method="post">
+        <label for="pid">Pid</label>
+        <input type="text" name="product_id">
+    
+        <label for="qty">Qty</label>
+        <input type="text" name="qty" id="">
+        <button type="submit">submit</button>
+    </form>
+</div>
