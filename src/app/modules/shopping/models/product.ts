@@ -3,7 +3,7 @@ export class product{
     title:string;
     category:string;
     tagline:string;
-    description:string;
+    description:string[];
     product_code:string;
     price:number;
 }
