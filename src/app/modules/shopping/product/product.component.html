@@ -1,57 +1,58 @@
 <div class="product-details">
-  <div class="about-buy-head  d-flex justify-content-around" >
-    <div class = " about ">About Product</div>
+  <div class="about-buy-head  d-flex justify-content-around">
+    <div class=" about ">About Product</div>
     <form action="http://127.0.0.1:8000/api/checkout" class="buy-options bg-white" method="post">
       <div class=" d-flex align-items-center justify-content-around">
-          <div class="me-2">Price {{prod.price | currency:"USD"}}</div>
-          <div class=" qty-rectangle rounded me-2">
-              <div class="row text-center ">
-                  <div class="col-6 my-auto border-end">
-                    <input style="border: none; width:100%; color: black;"  class="text-center bg-light border-0 disabled ms-2" readonly type="text"   name="qty" value="{{qty}}">
-                  </div>
-                  <input type="text"  hidden name="product_id" value="{{product_id}}" id="">
-                  <div class="col-6 py-1">
-                      <div class="row qty-button"><a (click)="increaseQty()"><i class="fa-solid fa-chevron-up"></i></a></div>
-                      <div class="row qty-button"><a (click)="decreaseQty()"><i class="fa-solid fa-chevron-down"></i></a></div>
-                  </div>
-              </div>
+        <div class="me-2">Price {{product_details.price | currency:"USD"}}</div>
+        <div class=" qty-rectangle rounded me-2">
+          <div class="row text-center ">
+            <div class="col-6 my-auto border-end">
+              <input style="border: none; width:100%; color: black;" class="text-center bg-light border-0 disabled ms-2"
+                readonly type="text" name="qty" value="{{qty}}">
+            </div>
+            <input type="text" hidden name="product_id" value="{{product_id}}" id="">
+            <div class="col-6 py-1">
+              <div class="row qty-button"><a (click)="increaseQty()"><i class="fa-solid fa-chevron-up"></i></a></div>
+              <div class="row qty-button"><a (click)="decreaseQty()"><i class="fa-solid fa-chevron-down"></i></a></div>
+            </div>
           </div>
-              <button type="submit" (click)="buyNow()" class=" my-auto btn btn-buy px-4 h5 rounded-pill">Buy Now</button>
-      </div>  
+        </div>
+        <button type="submit" class=" my-auto btn btn-buy px-4 h5 rounded-pill">Buy Now</button>
+      </div>
     </form>
   </div>
-  
-  
-    
-<div class="image-desc d-flex align-items-center justify-content-between">
-  <div class="image-slider">
-    <div id="" class="carousel slide" data-bs-ride="carousel">
-        
+
+
+
+  <div class="image-desc d-flex align-items-center justify-content-between">
+    <div class="image-slider">
+      <div id="" class="carousel slide" data-bs-ride="carousel">
+
         <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="1000" >
+          <div class="carousel-item active" data-bs-interval="1000">
             <img src="../../../assets/images/image 10.png" class="d-block " alt="...">
           </div>
 
           <div class="carousel-item" data-bs-interval="1000">
             <img src="../../../assets/images/image 11.png" class="d-block " alt="...">
           </div>
-          
+
           <div class="carousel-item" data-bs-interval="1000">
             <img src="../../../assets/images/image 12.png" class="d-block " alt="...">
           </div>
-          
+
           <div class="carousel-item" data-bs-interval="1000">
             <img src="../../../assets/images/image 13.png" class="d-block " alt="...">
           </div>
         </div>
-        
-        
+
+
       </div>
       <div style="text-align:center" class="mt-2 dot-container">
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span> 
-        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
 
       </div>
     </div>
@@ -59,15 +60,15 @@
 
 
     <div class="d-flex flex-column description">
-      <h6 class="category">{{prod.category}}</h6>
-      <h3 class="title" >{{prod.title}}</h3>
-      <p class="">{{prod.tagline}}</p>
+      <h6 class="category">{{product_details.category}}</h6>
+      <h3 class="title">{{product_details.title}}</h3>
+      <p class="">{{product_details.tagline}}</p>
 
       <ul>
-        <li *ngFor="let line of prod.description">{{line}}</li>
+        <li *ngFor="let line of product_details.description">{{line}}</li>
       </ul>
 
-      <p>{{prod.product_code}}</p>
+      <p>{{product_details.product_code}}</p>
 
     </div>
   </div>
@@ -76,15 +77,17 @@
 
 
 
-<button type="button" class="btn btn-primary" hidden id="successButton" data-bs-toggle="modal" data-bs-target="#successModal">
+<button type="button" class="btn btn-primary" hidden id="successButton" data-bs-toggle="modal"
+  data-bs-target="#successModal">
   Launch demo modal
 </button>
 
-<div  class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" data-bs-backdrop="static" aria-hidden="true" >
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" data-bs-backdrop="static"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="btn-close"   data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center d-flex flex-column align-items-center">
         <img class="p-3" src="../../../assets/images/successLogo.png" style="width:100px; height: 100px;" alt="">
@@ -95,8 +98,7 @@
           Get ready to experience the spatial audio with adaptive EQ that tunes music to your ears.
         </p>
       </div>
-     
+
     </div>
   </div>
 </div>
-

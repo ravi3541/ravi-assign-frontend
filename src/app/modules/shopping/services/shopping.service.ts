@@ -1,20 +1,20 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {environment} from '../../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingService {
 
-  base_url:string = "http://127.0.0.1:8000/api/";
+  
 
   constructor(private _http:HttpClient) { }
 
   retrieveProduct(product_id:number):Observable<any>{
     
-      //console.log("data = ",this._http.get(`${this.base_url}product/${product_id}/`))
-    return this._http.get(`${this.base_url}product/${product_id}/`)
+    return this._http.get(`${environment.base_url}product/${product_id}/`)
   }
 
 
@@ -24,7 +24,6 @@ export class ShoppingService {
       'qty':qty
     }
 
-    console.log("data = ", data)
-    this._http.post(`${this.base_url}checkout`,data)
+    this._http.post(`${environment.base_url}checkout`,data)
   }
 }
